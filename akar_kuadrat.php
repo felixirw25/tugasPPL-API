@@ -20,7 +20,8 @@ function calculateSquareRoot($numbers) {
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // Get the 'numbers' parameter
     $numbers = floatval($_GET['numbers']);
-    echo json_encode(['square_root' => $numbers]);
+    // echo json_encode(['square_root' => $numbers]);
+    echo json_encode("Berhasil!");
 
     if ($numbers !== null) {
         $squareRoot = calculateSquareRoot($numbers);
@@ -29,11 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // $connection = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
 
         // Check if the connection was successful
-        if ($connection->connect_error) {
-            http_response_code(500); // Internal Server Error
-            echo json_encode(['error' => 'Error connecting to the database']);
-            exit; // Exit the script if there's an error
-        }
+        // if ($connection->connect_error) {
+        //     http_response_code(500); // Internal Server Error
+        //     echo json_encode(['error' => 'Error connecting to the database']);
+        //     exit; // Exit the script if there's an error
+        // }
 
         // Insert the numbers and square root into the database
         // $insertSql = "INSERT INTO tb_sqnumbers (numbers, sqnumber) VALUES ($numbers, $squareRoot)";
